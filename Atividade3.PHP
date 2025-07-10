@@ -9,5 +9,3 @@ if ($numero > 0) {
 } else {
     echo "O número é zero.";
 }
-
-?>

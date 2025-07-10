@@ -8,4 +8,3 @@ for ($i = 1; $i <= $numero; $i++) {
 }
 
 echo "Fatorial do Numero é $Fatorial.";
-?>
