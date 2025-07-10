@@ -1,7 +1,7 @@
 <?php
 
 $numero1 = 100;
-$numero2 = 200;
+$numero2 = 999;
 
 function somaDiv($num)
 {
@@ -11,8 +11,10 @@ function somaDiv($num)
             $soma += $n;
         }
     }
-    return $soma;
+    echo "$soma";
 }
+
+
 
 if (somaDiv($numero1) == $numero2 & somaDiv($numero2) == $numero1) {
     echo "eles são amigos.";
