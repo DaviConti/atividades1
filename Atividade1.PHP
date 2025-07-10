@@ -8,7 +8,7 @@ if ($numero % 2 == 0) {
   echo "$numero é um número ímpar.";
 }
 
-$numero = 7;
+$numero = 2;
 
 if ($numero % 2 == 0) {
   echo "$numero é um número par.";
