@@ -2,7 +2,7 @@
 function exibirDivisores($num)
 {
     if ($num <= 0) {
-        echo "Por favor insira um número inteiro positivo.\n";
+        echo "Por favor insira um número inteiro positivo.";
         return;
     }
 
@@ -12,7 +12,7 @@ function exibirDivisores($num)
             echo $i;
         }
     }
-    echo "\n";
+    echo "";
 }
 
 $numero1 = 10;
