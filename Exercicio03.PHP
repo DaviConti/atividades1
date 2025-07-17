@@ -1,11 +1,27 @@
-<?php
+<html lang="en">
 
-$numero = -5;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-if ($numero > 0) {
-    echo "O número é positivo.";
-} elseif ($numero < 0) {
-    echo "O número é negativo.";
-} else {
-    echo "O número é zero.";
-}
+<body>
+
+    <form method="post">
+        Número: <input type="number" name="numero">
+        <input type="submit" value="Verificar">
+    </form>
+
+    <?php
+    if (isset($_POST['numero'])) {
+        $n = $_POST['numero'];
+        if ($n > 0) echo "Positivo";
+        elseif ($n < 0) echo "Negativo";
+        else echo "Zero";
+    }
+    ?>
+
+</body>
+
+</html>
