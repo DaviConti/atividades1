@@ -1,23 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Números Amigos</title>
+</head>
+<body>
+
+<form method="POST" action="">
+    <label for="num1">Número 1:</label>
+    <input type="number" id="num1" name="num1" required>
+    <label for="num2">Número 2:</label>
+    <input type="number" id="num2" name="num2" required>
+    <button type="submit" name="verificar_amigos">Verificar</button>
+</form>
+
 <?php
-
-$numero1 = 100;
-$numero2 = 999;
-
-function somaDiv($num)
-{
+function somaDivisores($n) {
     $soma = 0;
-    for ($n = 1; $n < $num; $n++) {
-        if ($num % $n == 0) {
-            $soma += $n;
+
+    for ($i = 1; $i < $n; $i++) {
+        if ($n % $i == 0) {
+            $soma += $i;
         }
     }
-    echo "$soma";
+    return $soma;
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['verificar_amigos'])) {
+    $a = (int)$_POST['num1'];
+    $b = (int)$_POST['num2'];
 
+    if ($a <= 0 || $b <= 0) {
+        echo "Por favor, insira apenas números inteiros positivos.";
+    } else {
+        $somaA = somaDivisores($a);
+        $somaB = somaDivisores($b);
 
-
-if (somaDiv($numero1) == $numero2 & somaDiv($numero2) == $numero1) {
-    echo "eles são amigos.";
-} else {
-    echo "eles não são amigos";
+        if ($somaA === $b && $somaB === $a) {
+            echo "$a e $b são números amigos.";
+        } else {
+            echo "$a e $b não são números amigos.";
+        }
+    }
 }
+?>
+
+</body>
+</html>

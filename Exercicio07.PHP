@@ -1,26 +1,32 @@
-<?php
-function numeroPerfeito($numero)
-{
-    if ($numero <= 1) {
-        return false;
-    }
+<!DOCTYPE html>
+<html>
 
-    $soma = 1;
-    for ($i = 2; $i <= sqrt($numero); $i++) {
-        if ($numero % $i == 0) {
-            $soma += $i;
-            if ($i * $i != $numero) {
-                $soma += $numero / $i;
+<head>
+    <title>Número Perfeito</title>
+</head>
+
+<body>
+    <form method="post">
+        Número: <input type="number" name="num">
+        <input type="submit" value="Verificar">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $numero = $_POST['num'];
+        $soma = 0;
+        for ($i = 1; $i < $numero; $i++) {
+            if ($numero % $i == 0) {
+                $soma += $i;
             }
         }
+        if ($soma == $numero) {
+            echo "$numero é perfeito.";
+        } else {
+            echo "$numero não é perfeito.";
+        }
     }
+    ?>
+</body>
 
-    return $soma == $numero;
-}
-
-$testnumero = 28;
-if (numeroPerfeito($testnumero)) {
-    echo $testnumero . " é um numero perfeito.";
-} else {
-    echo $testnumero . " não é um numero perfeito.";
-}
+</html>
